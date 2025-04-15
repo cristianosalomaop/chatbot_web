@@ -3,52 +3,47 @@ from nltk.chat.util import Chat, reflections
 
 pairs = [
     [
-        r"Oi|Olá|E ai|Ola",
+        r"(?i)oi|olá|ola|e aí|e ai",
         ["Olá!", "Como posso te ajudar?", "Oi, como você está?"]
     ],
 
     [
-        r"(?i)qual é o seu nome\??", 
+        r"(?i)qual (é|e) o seu nome\??", 
         ["Me chamo FinBot, seu assistente financeiro!", "Pode me chamar de FinBot, especialista em investimentos."]
     ],
 
     [
-        r"(?i)você pode me ajudar\??", 
-        ["Claro! Posso te ajudar com conceitos de economia, dicas de investimento e muito mais."]
+        r"(?i)com o que você pode me ajudar\??", 
+        ["Posso te ajudar com conceitos de economia e financeiro, dicas de investimento e tento deixar tudo mais simples pra você."]
     ],
 
     [
-        r"(?i)o que você faz\??", 
-        ["Eu explico conceitos financeiros, dou dicas de investimento e tento deixar tudo mais simples pra você."]
-    ],
-
-    [
-        r"(?i)qual a melhor forma de investir\??", 
+        r"(?i)qual (é|e) a melhor forma de investir\??", 
         ["Depende do seu perfil! Renda fixa é mais segura, mas renda variável pode ter mais retorno. Quer que eu te explique melhor?"]
     ],
 
     [
-        r"(?i)o que é CDI\??", 
+        r"(?i)o que (é|e) CDI|CDI\??", 
         ["CDI é um índice de referência de juros no Brasil, muito usado em investimentos de renda fixa. Vale ficar de olho!"]
     ],
 
     [
-        r"(?i)o que é CDB\??", 
+        r"(?i)o que (é|e) CDB|CDB\??", 
         ["CDB é o Certificado de Depósito Bancário. Você empresta dinheiro para o banco e recebe de volta com juros. É uma forma comum de renda fixa!"]
     ],
 
     [
-        r"(?i)o que é selic\??", 
+        r"(?i)o que (é|e) selic|selic\??", 
         ["A Selic é a taxa básica de juros da economia brasileira. Ela influencia tudo: empréstimos, financiamentos e até a poupança."]
     ],
 
     [
-        r"(?i)o que é renda fixa\??", 
+        r"(?i)o que (é|e) renda fixa|renda fixa\??", 
         ["Renda fixa é um tipo de investimento onde você sabe (ou estima) quanto vai ganhar. Exemplos: Tesouro Direto, CDB, LCI."]
     ],
 
     [
-        r"(?i)o que é renda variável\??", 
+        r"(?i)o que (é|e) renda vari(á|a)vel|renda vari(á|a)vel\??", 
         ["É o tipo de investimento cujo retorno não é garantido, como ações ou criptomoedas. Pode ganhar muito... ou perder."]
     ],
 
@@ -58,18 +53,13 @@ pairs = [
     ],
 
     [
-        r"(?i)investe em ações|ações são boas\??", 
+        r"(?i)investimento em a(ç|c)(õ|o)es|a(ç|c)(õ|o)es (é|e) uma boa op(ç|c)(ã|a)o|a(ç|c)(õ|o)es\??", 
         ["Ações podem ser ótimas no longo prazo. Mas é bom estudar o mercado e entender o seu perfil de investidor."]
     ],
 
     [
-        r"(?i)o que é inflação\??", 
+        r"(?i)o que (é|e) inflaç(ã|a)o\??", 
         ["Inflação é o aumento geral e contínuo dos preços. Com ela, o seu dinheiro perde poder de compra."]
-    ],
-
-    [
-        r"(?i)qual o sentido da vida\??", 
-        ["Fazer o dinheiro trabalhar pra você! E também: 42 😄"]
     ],
 
     [
@@ -83,47 +73,47 @@ pairs = [
     ],
 
     [
-        r"(?i)vale a pena investir na poupança\??",
+        r"(?i)vale a pena investir na poupan(ç|c)a|poupan(ç|c)a\??",
         ["A poupança é segura, mas rende pouco. Existem opções tão seguras quanto, com rendimentos melhores, como o Tesouro Selic."]
     ],
 
-    
     [
-        r"(?i)investimento de curto prazo\??",
+        r"(?i)investimento de curto prazo|curto prazo\??",
         ["Para curto prazo, é bom investir em ativos de alta liquidez e baixo risco, como Tesouro Selic ou CDB com liquidez diária."]
     ],
+
     [
-        r"(?i)o que é liquidez\??",
+        r"(?i)o que (é|e) liquidez|liquidez\??",
         ["Liquidez é a facilidade de transformar um investimento em dinheiro. Alta liquidez = resgate rápido."]
     ],
 
     [
-        r"(?i)como funciona o tesouro direto\??",
-        ["Você empresta dinheiro para o governo e recebe com juros depois. É uma das formas mais seguras de investir no Brasil."]
+        r"(?i)como funciona o tesouro direto|tesouro direto\??",
+        ["No tesouro direto você empresta dinheiro para o governo e recebe com juros depois. É uma das formas mais seguras de investir no Brasil."]
     ],
 
     [
-        r"(?i)qual a diferença entre cdb e tesouro direto\??",
+        r"(?i)qual a diferença entre CDB e tesouro direto\??",
         ["Ambos são de renda fixa, mas o CDB é emitido por bancos e o Tesouro pelo governo. Tesouro tem mais segurança, CDB pode ter rentabilidade maior."]
     ],
 
     [
-        r"(?i)o que é PIB\??",
+        r"(?i)o que (é|e) PIB|PIB\??",
         ["PIB é a soma de todos os bens e serviços produzidos no país. É uma forma de medir a economia."]
     ],
 
     [
-        r"(?i)o que é taxa de juros\??",
+        r"(?i)o que (é|e) taxa de juros|taxa de juros\??",
         ["É o custo do dinheiro. Afeta empréstimos, financiamentos e até investimentos."]
     ],
 
     [
-        r"(?i)o que é taxa básica de juros\??",
+        r"(?i)o que (é|e) taxa b(á|a)sica de juros|taxa b(á|a)sica de juros\??",
         ["É a taxa Selic! Ela é definida pelo Banco Central e influencia toda a economia."]
     ],
 
     [
-        r"(?i)o que é câmbio|como funciona o câmbio\??",
+        r"(?i)o que (é|e) c(â|a)mbio|como funciona o c(â|a)mbio|c(â|a)mbio\??",
         ["É a relação entre duas moedas, como real e dólar. O valor muda conforme a oferta e demanda."]
     ],
 
@@ -133,37 +123,37 @@ pairs = [
     ],
 
     [
-        r"(?i)como sair das dívidas\??",
+        r"(?i)como sair das d(í|i)vidas\??",
         ["Organize suas dívidas, priorize as com maior juros e tente renegociar. Depois, monte uma reserva para emergências."]
     ],
 
     [
-        r"(?i)o que é reserva de emergência\??",
+        r"(?i)o que (é|e) reserva de emerg(ê|e)ncia|reserva de emerg(ê|e)ncia\??",
         ["É um valor guardado para imprevistos, equivalente a 3 a 6 meses dos seus gastos mensais, em algo seguro e com liquidez."]
     ],
 
     [
-        r"(?i)quanto devo guardar por mês\??",
+        r"(?i)quanto devo guardar por m(ê|e)s\??",
         ["O ideal é guardar pelo menos 10% da sua renda. Se der mais, melhor ainda!"]
     ],
 
     [
-        r"(?i)estou perdido|não sei por onde começar",
-        ["Tudo bem, muita gente começa assim. Posso te guiar pelos primeiros passos do mundo financeiro. Vamos juntos!"]
+        r"(?i)não sei por onde começar|não sei como começar a investir|como começar a investir\??",
+        ["Tudo bem, muita gente começa assim. Posso te guiar pelos primeiros passos do mundo financeiro. Primeiro, vamos descobrir seu perfil de investidor, para isso me confirme digitando perfil de investidor ou qual o meu perfil de investidor"]
     ],
 
     [
-        r"(?i)o que são ações\??",
+        r"(?i)o que s(ã|a)o a(ç|c)(õ|o)es\??",
         ["Ações são pequenas partes de uma empresa. Ao comprar uma, você vira sócio e participa dos lucros (ou prejuízos)."]
     ],
 
     [
-        r"(?i)o que são fundos imobiliários|FII\??",
+        r"(?i)o que s(ã|a)o (ffis|fundos imobili(á|a)rios)|ffis\??",
         ["FIIs são fundos que investem em imóveis. Você ganha com aluguéis e valorização, sem precisar comprar imóveis diretamente."]
     ],
 
     [
-        r"(?i)o que é day trade\??",
+        r"(?i)o que (é|e) day trade|day trade\??",
         ["É uma estratégia de compra e venda de ativos no mesmo dia. Pode dar lucro rápido, mas o risco é alto."]
     ],
 
@@ -173,38 +163,35 @@ pairs = [
     ],
 
     [
-        r"(?i)dividendos\??",
-        ["Dividendos são partes do lucro das empresas que são distribuídas aos acionistas. Uma forma de ganhar com ações sem vender."]
-    ],
-
-    [
-        r"(?i)ETFs\??",
+        r"(?i)o que (é|e) etfs|etfs\??",
         ["ETFs são fundos que replicam índices como o Ibovespa. É uma forma prática e diversificada de investir em ações."]
     ],
 
     [
-        r"(?i)o que é IPCA\??",
-        ["O IPCA é o índice oficial da inflação no Brasil. Ele mede o aumento dos preços ao consumidor."]
+        r"(?i)qual (meu|o) perfil de investidor|perfil de investidor\??",
+        ["Existem 3 perfis principais:\n\n"
+         "🟢 *Conservador*: busca segurança e prefere investimentos com baixo risco, como Tesouro Selic e CDBs.\n"
+         "🟡 *Moderado*: aceita um pouco mais de risco, combina renda fixa com renda variável.\n"
+         "🔴 *Arrojado*: busca altos retornos e tolera volatilidade, investe em ações, fundos e criptomoedas.\n\n"
+         "Qual deles parece mais com você? "]
     ],
 
     [
-        r"(?i)o que é IGPM\??",
-        ["O IGP-M é um índice de inflação usado para reajustar aluguéis e contratos. Ele pode variar bastante."]
+        r"(?i)(sou|tenho perfil) conservador|investidor conservador",
+        ["Como perfil conservador, o ideal é focar em segurança e liquidez.\n\n"
+         "Sugestão: Tesouro Selic, CDBs com liquidez diária e fundos de renda fixa."]
     ],
 
     [
-        r"(?i)taxa real x taxa nominal\??",
-        ["A taxa nominal é a taxa 'bruta'. A real é descontada da inflação. O que importa mesmo é o quanto seu dinheiro ganha de verdade."]
+        r"(?i)(sou|tenho perfil) moderado|investidor moderado",
+        ["Como investidor moderado, você pode diversificar.\n\n"
+         "Ex: Tesouro IPCA, fundos multimercado e até ações de boas empresas."]
     ],
 
     [
-        r"(?i)como funciona a bolsa de valores\??",
-        ["A bolsa é um ambiente onde ações e outros ativos são comprados e vendidos. Funciona pela lei da oferta e demanda."]
-    ],
-
-    [
-        r"(?i)como funciona o home broker\??",
-        ["É uma plataforma online que te permite comprar e vender ações por conta própria, direto do seu computador ou celular."]
+        r"(?i)(sou|tenho perfil) arrojado|investidor arrojado",
+        ["Você busca grandes retornos, mesmo com riscos maiores.\n\n"
+         "Sugestão: ações, fundos de ações, criptomoedas e ETFs internacionais."]
     ],
 
     [
@@ -218,7 +205,7 @@ pairs = [
     ],
 
     [
-        r"(?i)não entendo nada de finanças", 
+        r"(?i)n(ã|a)o entendo nada de finan(ç|c)as", 
         ["Relaxa! Eu tô aqui pra te ajudar a aprender passo a passo. Vamos juntos nessa jornada."]
     ],
 
@@ -233,97 +220,11 @@ pairs = [
     ],
 
     [
-        r"(?i)o que são ações\??",
-        ["Ações são pequenas partes de uma empresa. Ao comprar uma, você vira sócio e participa dos lucros (ou prejuízos)."]
-    ],
-
-    [
-        r"(?i)o que são fundos imobiliários|FII\??",
-        ["FIIs são fundos que investem em imóveis. Você ganha com aluguéis e valorização, sem precisar comprar imóveis diretamente."]
-    ],
-
-    [
-        r"(?i)o que é day trade\??",
-        ["É uma estratégia de compra e venda de ativos no mesmo dia. Pode dar lucro rápido, mas o risco é alto."]
-    ],
-
-    [
-        r"(?i)renda passiva\??",
-        ["Renda passiva é o dinheiro que entra sem você precisar trabalhar por ele, como aluguéis, dividendos ou juros de investimentos."]
-    ],
-
-    [
-        r"(?i)dividendos\??",
-        ["Dividendos são partes do lucro das empresas que são distribuídas aos acionistas. Uma forma de ganhar com ações sem vender."]
-    ],
-
-    [
-        r"(?i)ETFs\??",
-        ["ETFs são fundos que replicam índices como o Ibovespa. É uma forma prática e diversificada de investir em ações."]
-    ],
-
-    [
-        r"(?i)qual (meu|o) perfil de investidor\??",
-        ["Existem 3 perfis principais:\n\n"
-        "🟢 *Conservador*: busca segurança e prefere investimentos com baixo risco, como Tesouro Selic e CDBs.\n"
-        "🟡 *Moderado*: aceita um pouco mais de risco, combina renda fixa com renda variável.\n"
-        "🔴 *Arrojado*: busca altos retornos e tolera volatilidade, investe em ações, fundos e criptomoedas.\n\n"
-        "Qual deles parece mais com você? "]
-    ],
-
-    [
-        r"(?i)sou do perfil conservador|conservador",
-        ["Como perfil conservador, o ideal é focar em segurança e liquidez.\n\n"
-        "Sugestão: Tesouro Selic, CDBs com liquidez diária e fundos de renda fixa."]
-    ],
-
-    [
-        r"(?i)tenho perfil conservador",
-        ["Perfeito! Comece pelo Tesouro Direto (Selic) ou CDBs de bancos grandes. São seguros e rendem mais que a poupança."]
-    ],
-
-    [
-        r"(?i)investidor conservador",
-        ["Ótimo! Fundos de renda fixa, LCI/LCAs e Tesouro Selic são ótimos para esse perfil."]
-    ],
-    [
-        r"(?i)sou do perfil moderado|moderado",
-        ["Como investidor moderado, você pode diversificar.\n\n"
-        "Ex: Tesouro IPCA, fundos multimercado e até ações de boas empresas."]
-    ],
-
-    [
-        r"(?i)tenho perfil moderado",
-        ["Excelente! Dá pra equilibrar segurança com algum risco. Misture renda fixa com renda variável aos poucos."]
-    ],
-
-    [
-        r"(?i)investidor moderado",
-        ["Fundos multimercado, debêntures e ETFs são boas opções pra quem quer mais rendimento com risco controlado."]
-    ],
-
-    [
-        r"(?i)sou do perfil arrojado|arrojado",
-        ["Você busca grandes retornos, mesmo com riscos maiores.\n\n"
-        "Sugestão: ações, fundos de ações, criptomoedas e ETFs internacionais."]
-    ],
-
-    [
-        r"(?i)tenho perfil arrojado",
-        ["Legal! Lembre-se de manter uma reserva de emergência e investir com estratégia. Ações e cripto podem ser boas escolhas."]
-    ],
-
-    [
-        r"(?i)investidor arrojado",
-        ["Invista com foco no longo prazo. Diversifique em ações, fundos de investimento e novos mercados."]
-    ],
-
-    [
         r"(.*)\?", 
         [
             "Desculpe, não tenho uma resposta específica para essa pergunta.", 
             "Você pode reformular a pergunta.", 
-            "Essa pergunta é um pouco fora da minha área, mas posso tentar te ajudar com outra coisa!",
+            "Não sei a resposta dessa pergunta, mas posso tentar te ajudar com outra coisa!",
             "Ainda não tenho uma resposta precisa pra isso. Quer tentar perguntar de outro jeito?"
         ]
     ],
@@ -333,11 +234,12 @@ pairs = [
         [
             "Desculpe, não tenho uma resposta específica para essa pergunta.", 
             "Você pode reformular a pergunta.", 
-            "Essa pergunta é um pouco fora da minha área, mas posso tentar te ajudar com outra coisa!",
+            "Não sei a resposta dessa pergunta, mas posso tentar te ajudar com outra coisa!",
             "Ainda não tenho uma resposta precisa pra isso. Quer tentar perguntar de outro jeito?"
         ]
     ],
 ]
+
 
 
 reflections = {
